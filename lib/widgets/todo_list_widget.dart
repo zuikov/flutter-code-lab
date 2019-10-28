@@ -13,7 +13,7 @@ class TodoListState extends State<TodoList> {
   final items = ['Item 1', 'Item 2', 'Item 3'];
 
   void _addNewItem(BuildContext context) {
-    showDialog<dynamic>(
+    showDialog<void>(
         context: context,
         builder: (context) {
           return AlertDialog(
@@ -25,7 +25,12 @@ class TodoListState extends State<TodoList> {
             actions: <Widget>[
               FlatButton(
                 child: const Text('CANCEL'),
-                onPressed: () => Navigator.of(context).pop(),
+                onPressed: () {
+                  setState(() {
+                      _textFieldController.clear();
+                  });
+                  Navigator.of(context).pop();
+                }, 
               ),
               FlatButton(
                 child: const Text('Add'),
@@ -45,11 +50,11 @@ class TodoListState extends State<TodoList> {
   }
 
   void _deleteItem(int index) {
-    showDialog<dynamic>(
+    showDialog<void>(
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text('Delete this record ?'),
+            title: const Text('Delete this record?'),
             actions: <Widget>[
               FlatButton(
                 child: const Text('CANCEL'),
