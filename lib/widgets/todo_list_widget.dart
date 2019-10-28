@@ -25,9 +25,7 @@ class TodoListState extends State<TodoList> {
             actions: <Widget>[
               FlatButton(
                 child: const Text('CANCEL'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
+                onPressed: () => Navigator.of(context).pop(),
               ),
               FlatButton(
                 child: const Text('Add'),
@@ -55,9 +53,7 @@ class TodoListState extends State<TodoList> {
             actions: <Widget>[
               FlatButton(
                 child: const Text('CANCEL'),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
+                onPressed: () => Navigator.of(context).pop(),
               ),
               FlatButton(
                 child: const Text('DELETE'),
