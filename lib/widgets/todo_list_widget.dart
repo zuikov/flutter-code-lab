@@ -8,9 +8,9 @@ class TodoList extends StatefulWidget {
 }
 
 class TodoListState extends State<TodoList> {
-  final TextEditingController _textFieldController = TextEditingController();
+  final _textFieldController = TextEditingController();
 
-  List<String> items = ['Item 1', 'Item 2', 'Item 3'];
+  final items = ['Item 1', 'Item 2', 'Item 3'];
 
   void _addNewItem(BuildContext context) {
     showDialog<dynamic>(
@@ -51,7 +51,7 @@ class TodoListState extends State<TodoList> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: const Text('Delete this item ?'),
+            title: const Text('Delete this record ?'),
             actions: <Widget>[
               FlatButton(
                 child: const Text('CANCEL'),
